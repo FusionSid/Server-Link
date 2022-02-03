@@ -1,1 +1,1 @@
-from checks import is_it_me
+from utils.checks import is_it_me

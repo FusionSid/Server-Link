@@ -1,6 +1,6 @@
 import discord
 import os
-from discord.ext import commands, tasks
+from discord.ext import commands
 import discord.ui
 from os import listdir
 from os.path import isfile, join
