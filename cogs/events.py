@@ -1,20 +1,25 @@
 import discord
 from discord.ext import commands
-import json
+from utils import update_db, get_db
 
 async def create_guild_db(guild):
     db = {
-        "guild_id" : 123,
-        "channel" : 123,
+        "guild_id" : guild.id,
+        "channel" : None,
         "on" : False,
         "public" : False,
-        "banned_users" : {
-
-        },
-        "threads" : {
-
-        }
+        "banned_users" : {},
+        "threads" : {}
     }
+    data = await get_db()
+    data.append(db)
+
+    update = await update_db(data)
+
+    if update:
+        print("Success")
+    else:
+        print("Failed")
 
 class Events(commands.Cog):
     def __init__(self, client):
