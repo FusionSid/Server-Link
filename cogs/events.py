@@ -3,7 +3,18 @@ from discord.ext import commands
 import json
 
 async def create_guild_db(guild):
-    pass
+    db = {
+        "guild_id" : 123,
+        "channel" : 123,
+        "on" : False,
+        "public" : False,
+        "banned_users" : {
+
+        },
+        "threads" : {
+
+        }
+    }
 
 class Events(commands.Cog):
     def __init__(self, client):
