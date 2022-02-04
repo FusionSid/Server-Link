@@ -133,11 +133,6 @@ class Settings(commands.Cog):
 
 
     @commands.command()
-    async def settings(self, ctx):
-        pass
-
-
-    @commands.command()
     async def setchannel(self, ctx, channel:discord.TextChannel):
         data = await get_db()
         for guild in data:
@@ -150,6 +145,8 @@ class Settings(commands.Cog):
             print("Success")
         else:
             print("Failed")
+
+        await ctx.send(embed=discord.Embed(title="Channel Set:", description=f"Channel set to {channel.mention}"))  
 
 
     @commands.group()

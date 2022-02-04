@@ -1,0 +1,29 @@
+
+04/02/2022 21:47:35 | MESSAGE: Starting up bot
+04/02/2022 21:47:35 | MESSAGE: All Cogs Loaded - Logging into Discord
+04/02/2022 21:47:38 | MESSAGE: Bot is connected to discord
+04/02/2022 21:48:04 | ERROR: Command "efwegegegewg" is not found
+04/02/2022 21:48:13 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:48:15 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:48:25 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:49:28 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:49:36 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:49:50 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:49:52 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:52:27 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:52:33 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:55:47 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:57:21 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:57:26 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:58:11 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:58:33 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:58:50 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:58:54 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:59:09 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:59:09 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:59:12 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:59:15 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 21:59:21 | ERROR: 'NoneType' object is not subscriptable
+04/02/2022 22:07:18 | MESSAGE: Starting up bot
+04/02/2022 22:07:18 | MESSAGE: All Cogs Loaded - Logging into Discord
+04/02/2022 22:07:21 | MESSAGE: Bot is connected to discord

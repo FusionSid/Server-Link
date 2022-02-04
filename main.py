@@ -5,59 +5,78 @@ import discord.ui
 from os import listdir
 from os.path import isfile, join
 import dotenv
-from utils import update_db, get_db
+from utils import update_db, get_db, Log
 
 dotenv.load_dotenv()
 TOKEN = os.environ['TOKEN']
+
+log = Log(path="databases/log.txt")
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=";", intents=intents, help_command=None, owner_id=624076054969188363,case_insensitive=True)
 
 async def cross_server(message):
-    other_guild, other_guild_data = None,  None
-    data = await get_db()
-
     try:
+        guild1 = message.guild.id
+
+        guild_1_data, guild_2_data, guild2 = None, None, None
+
+        data = await get_db()
+
         for i in data:
-            if i['guild_id'] == message.guild.id:
-                guild_data = i
-        
-        for key, value in guild_data['threads'].items():
+            if i['guild_id'] == guild1:
+                if i['channel'] is None:
+                    return
+                if i['threads'] == False:
+                    return
+                guild_1_data = i
+
+        for key, value in guild_1_data['threads'].items():
             if value == message.channel.id:
-                other_guild = int(key)
-                the_thread = int(value)
-
-        for i in data:
-            if i['guild_id'] == other_guild:
-                other_guild_data = i
-
-        for key, value in other_guild_data['threads'].items():
-            if int(key) == message.guild.id:
+                guild2 = int(key)
         
+        for i in data:
+            if i['guild_id'] == guild2:
+                guild_2_data = i
+                channel = i['channel']
+                if i['threads'] == False:
+                    return
+                if channel is None:
+                    return
+
+        for key, value in guild_2_data['threads'].items():
+            if int(key) == guild1:
+                thread = int(value)
                 em = discord.Embed(description=message.content)
-                em.set_author(name=message.author.name, url=message.author.avatar.url)
+                if message.author.avatar is not None:
+                    em.set_author(name=message.author.name, url=message.author.avatar.url)
+                else:
+                    em.set_author(name=message.author.name, url=message.author.default_avatar)
 
-                guild = await client.fetch_guild(other_guild_data["guild_id"])
-                print(guild.id, the_thread)
-                send_channel = guild.get_thread(the_thread)
+                channel = await client.fetch_channel(channel)
+                thread = channel.get_thread(thread)
 
-                return await send_channel.send(embed=em)
+                return await thread.send(embed=em)
     except Exception as e:
-        print(e)
-
+        pass
 
 @client.event
 async def on_ready():
     print("=======================\nConnected\n=========")
+    log.log_message("Bot is connected to discord")
 
 
 @client.event
 async def on_message(message):
+    if message.author.bot:
+        return
+    if message.author.id == 938913496442212392:
+        return
     await cross_server(message)
     await client.process_commands(message)
 
 def start_bot(client):
-    
+    log.log_message("Starting up bot")
     lst = [f for f in listdir("cogs/") if isfile(join("cogs/", f))]
     no_py = [s.replace('.py', '') for s in lst]
     startup_extensions = ["cogs." + no_py for no_py in no_py]
@@ -68,6 +87,7 @@ def start_bot(client):
             print(f"Loaded {cogs}")
 
         print("\nAll Cogs Loaded\n===============\nLogging into Discord...")
+        log.log_message("All Cogs Loaded - Logging into Discord")
         
         client.run(TOKEN)
 
