@@ -29,7 +29,16 @@ class Events(commands.Cog):
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
         em = discord.Embed(title="Thanks for inviting me!", description="Use `;help` for help")
-        await guild.system_channel.send(embed=em)
+        
+        try:
+            await guild.system_channel.send(embed=em)
+        except:
+            for i in guild.text_channels:
+                try:
+                    e = await i.send(embed=em)
+                    print(e)
+                except:
+                    pass
 
         await create_guild_db(guild)
 
