@@ -1,6 +1,6 @@
 import discord
 import os
-from discord.ext import commands
+from discord.ext import commands, tasks
 import discord.ui
 from os import listdir
 from os.path import isfile, join
@@ -14,6 +14,25 @@ log = Log(path="databases/log.txt")
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=";", intents=intents, help_command=None, owner_id=624076054969188363,case_insensitive=True)
+
+@tasks.loop(hours=12.0)
+async def threads_keep_alive():
+    threads = {}
+    data = await get_db()
+    for i in data:
+        if i['threads']:
+            for thread in i['threads']:
+                threads[thread] = i['channel']
+    print(threads)
+    for i in threads:
+        try:
+            channel = await client.fetch_channel(int(i[1]))
+            thread = channel.get_thread(int(i[0]))
+            msg = await thread.send("** **")
+            asyncio.sleep(5)
+            await msg.delete()
+        except Exception as e:
+            print(e)
 
 async def cross_server(message):
     try:
@@ -77,6 +96,7 @@ async def on_message(message):
 
 def start_bot(client):
     log.log_message("Starting up bot")
+    threads_keep_alive.start()
     lst = [f for f in listdir("cogs/") if isfile(join("cogs/", f))]
     no_py = [s.replace('.py', '') for s in lst]
     startup_extensions = ["cogs." + no_py for no_py in no_py]
