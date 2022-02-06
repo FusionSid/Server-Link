@@ -14,7 +14,7 @@ TOKEN = os.environ['TOKEN']
 log = Log(path="databases/log.txt")
 
 intents = discord.Intents.all()
-client = commands.Bot(command_prefix=";", intents=intents, help_command=None, owner_id=624076054969188363,case_insensitive=True)
+client = commands.Bot(command_prefix=">", intents=intents, help_command=None, owner_id=624076054969188363,case_insensitive=True)
 
 @tasks.loop(hours=12.0)
 async def threads_keep_alive():
@@ -31,7 +31,7 @@ async def threads_keep_alive():
             thread = await client.fetch_channel(cha)
             #thread = channel.get_thread(thr)
             msg = await thread.send("** **")
-            asyncio.sleep(5)
+            await asyncio.sleep(1)
             await msg.delete()
         except Exception as e:
             print(e)
