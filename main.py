@@ -24,19 +24,16 @@ async def threads_keep_alive():
         if i['threads']:
             for key, value in i['threads'].items():
                 threads[value] = i['channel']
-    try:
-        for key,value in threads.items():
-            cha = int(key)
-            thr = int(value)
-            try:
-                channel = await client.fetch_channel(cha)
-                thread = channel.get_thread(thr)
-                msg = await thread.send("** **")
-                asyncio.sleep(5)
-                await msg.delete()
-            except:
-                pass
-    except Exception as e:
+    for key,value in threads.items():
+        cha = int(key)
+        thr = int(value)
+        try:
+            channel = await client.fetch_channel(cha)
+            thread = channel.get_thread(thr)
+            msg = await thread.send("** **")
+            asyncio.sleep(5)
+            await msg.delete()
+        except Exception as e:
             print(e)
 
 async def cross_server(message):
