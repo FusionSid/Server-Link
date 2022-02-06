@@ -23,7 +23,7 @@ async def threads_keep_alive():
         data = await get_db()
         for i in data:
             if i['threads']:
-                for key, value in i['threads'].items:
+                for key, value in i['threads'].items():
                     threads[value] = i['channel']
         print(threads)
         for i in threads:
