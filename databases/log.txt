@@ -33,3 +33,40 @@
 06/02/2022 14:47:08 | MESSAGE: Starting up bot
 06/02/2022 14:47:08 | MESSAGE: All Cogs Loaded - Logging into Discord
 06/02/2022 14:47:11 | MESSAGE: Bot is connected to discord
+06/02/2022 14:48:43 | MESSAGE: Starting up bot
+06/02/2022 14:48:43 | MESSAGE: All Cogs Loaded - Logging into Discord
+06/02/2022 14:48:46 | MESSAGE: Bot is connected to discord
+06/02/2022 15:05:43 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:05:55 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Events' has not been loaded.
+06/02/2022 15:06:06 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:06:31 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:06:36 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:06:50 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:06:51 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:07:02 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.FUn' has not been loaded.
+06/02/2022 15:07:05 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:07:05 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:07:07 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:07:29 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:07:30 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:13:03 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:13:08 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:15:55 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:15:59 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:16:49 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.FUn' has not been loaded.
+06/02/2022 15:16:51 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:16:52 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:16:53 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:17:03 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:17:26 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:17:35 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:17:56 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Fun' has not been loaded.
+06/02/2022 15:18:00 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:18:31 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:19:14 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:19:21 | ERROR: Command raised an exception: ExtensionNotLoaded: Extension 'cogs.Events' has not been loaded.
+06/02/2022 15:19:25 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:19:30 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:20:00 | ERROR: Command "reactemoji" is not found
+06/02/2022 15:20:24 | ERROR: Command "reactemoji" is not found
+06/02/2022 22:01:04 | ERROR: Command raised an exception: ValueError: list.remove(x): x not in list
