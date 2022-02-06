@@ -1,4 +1,5 @@
 import discord
+from utils import get_db
 import os
 import json
 from discord.ext import commands
@@ -96,21 +97,19 @@ class Fusion(commands.Cog):
     @commands.command()
     @commands.check(is_it_me)
     async def message_servers(self, ctx, *, message):
-        c = 0
+        data = await get_db()
         for guild in self.client.guilds:
-            try:
-                await guild.system_channel.send(message)
-            except:
-                pass
-            for i in guild.text_channels:
-                try:
-                    await i.send(message)
-                    c += 1
-                    break
-                except Exception as e:
-                    await ctx.send(embed=discord.Embed(title=f"Failed to send to {i.name}\n{guild.name} ({guild.id})", description=e))
-                    c -= 1
-        await ctx.send(f"Message sent to {c}/{len(self.client.guilds)} servers")
+            for i in data:
+                if i['guild_id'] == guild.id:
+                    if i['channel'] is None:
+                        break
+                    else:
+                        try:
+                            channel = await self.client.fetch_channel(i["channel"])
+                            await channel.send(message)
+                            break
+                        except:
+                            break
 
     @commands.command(aliases=['dmr'])
     @commands.check(is_it_me)
