@@ -24,11 +24,12 @@ async def threads_keep_alive():
         if i['threads']:
             for key, value in i['threads'].items():
                 threads[value] = i['channel']
-    print(threads)
     try:
         for i in threads:
-            channel = await client.fetch_channel(int(i[1]))
-            thread = channel.get_thread(int(i[0]))
+            cha = i[1]
+            thr = i[0]
+            channel = await client.fetch_channel(cha)
+            thread = channel.get_thread(thr)
             msg = await thread.send("** **")
             asyncio.sleep(5)
             await msg.delete()
