@@ -25,9 +25,9 @@ async def threads_keep_alive():
             for key, value in i['threads'].items():
                 threads[value] = i['channel']
     try:
-        for i in threads:
-            cha = i[1]
-            thr = i[0]
+        for key,value in threads.items():
+            cha = int(key)
+            thr = int(value)
             channel = await client.fetch_channel(cha)
             thread = channel.get_thread(thr)
             msg = await thread.send("** **")
