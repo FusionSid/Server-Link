@@ -28,11 +28,14 @@ async def threads_keep_alive():
         for key,value in threads.items():
             cha = int(key)
             thr = int(value)
-            channel = await client.fetch_channel(cha)
-            thread = channel.get_thread(thr)
-            msg = await thread.send("** **")
-            asyncio.sleep(5)
-            await msg.delete()
+            try:
+                channel = await client.fetch_channel(cha)
+                thread = channel.get_thread(thr)
+                msg = await thread.send("** **")
+                asyncio.sleep(5)
+                await msg.delete()
+            except:
+                pass
     except Exception as e:
             print(e)
 
