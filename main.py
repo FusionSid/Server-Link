@@ -18,14 +18,14 @@ client = commands.Bot(command_prefix=";", intents=intents, help_command=None, ow
 
 @tasks.loop(hours=12.0)
 async def threads_keep_alive():
+    threads = {}
+    data = await get_db()
+    for i in data:
+        if i['threads']:
+            for key, value in i['threads'].items():
+                threads[value] = i['channel']
+    print(threads)
     try:
-        threads = {}
-        data = await get_db()
-        for i in data:
-            if i['threads']:
-                for key, value in i['threads'].items():
-                    threads[value] = i['channel']
-        print(threads)
         for i in threads:
             channel = await client.fetch_channel(int(i[1]))
             thread = channel.get_thread(int(i[0]))
