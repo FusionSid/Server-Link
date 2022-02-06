@@ -6,6 +6,7 @@ from os import listdir
 from os.path import isfile, join
 import dotenv
 from utils import update_db, get_db, Log
+import asyncio
 
 dotenv.load_dotenv()
 TOKEN = os.environ['TOKEN']
@@ -22,7 +23,7 @@ async def threads_keep_alive():
     for i in data:
         if i['threads']:
             for thread in i['threads']:
-                threads[thread] = i['channel']
+                threads[thread[1]] = i['channel']
     print(threads)
     for i in threads:
         try:
