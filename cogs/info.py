@@ -45,7 +45,7 @@ class Utilities(commands.Cog):
         em.add_field(inline=True, name="User Count", value=len(list(self.client.get_all_members())))
         em.add_field(inline=True, name="Command Count",value=f"{len(self.client.commands)} commands")
         em.add_field(inline=True, name="Ping",value=f"{round(self.client.latency * 1000)}ms")
-        em.set_footer(text="Mostly made by FusionSid#3645")
+        em.set_footer(text="Made by FusionSid#3645")
         em.add_field(name='CPU Usage',value=f'{psutil.cpu_percent()}%', inline=True)
         em.add_field(name='Memory Usage',value=f'{psutil.virtual_memory().percent}% of ({round((psutil.virtual_memory().total/1073741824), 2)}GB)', inline=True)
         em.add_field(name='Available Memory',value=f'{round(psutil.virtual_memory().available * 100 / psutil.virtual_memory().total)}%', inline=True)
