@@ -123,7 +123,7 @@ async def on_message(message):
 
 def start_bot(client):
     log.log_message("Starting up bot")
-    # threads_keep_alive.start()
+    threads_keep_alive.start()
     lst = [f for f in listdir("cogs/") if isfile(join("cogs/", f))]
     no_py = [s.replace('.py', '') for s in lst]
     startup_extensions = ["cogs." + no_py for no_py in no_py]
