@@ -30,7 +30,7 @@ async def threads_keep_alive():
         thr = int(value)
         try:
             thread = await client.fetch_channel(cha)
-            #thread = channel.get_thread(thr)
+            thread = thread.get_thread(thr)
             msg = await thread.send("** **")
             await asyncio.sleep(1)
             await msg.delete()
