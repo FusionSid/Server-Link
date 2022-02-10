@@ -70,3 +70,27 @@
 06/02/2022 15:20:00 | ERROR: Command "reactemoji" is not found
 06/02/2022 15:20:24 | ERROR: Command "reactemoji" is not found
 06/02/2022 22:01:04 | ERROR: Command raised an exception: ValueError: list.remove(x): x not in list
+10/02/2022 13:46:10 | MESSAGE: Starting up bot
+10/02/2022 13:46:10 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:46:13 | MESSAGE: Bot is connected to discord
+10/02/2022 13:46:40 | MESSAGE: Starting up bot
+10/02/2022 13:46:40 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:46:43 | MESSAGE: Bot is connected to discord
+10/02/2022 13:47:31 | MESSAGE: Starting up bot
+10/02/2022 13:47:31 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:47:34 | MESSAGE: Bot is connected to discord
+10/02/2022 13:47:57 | MESSAGE: Starting up bot
+10/02/2022 13:47:57 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:48:00 | MESSAGE: Bot is connected to discord
+10/02/2022 13:50:50 | MESSAGE: Starting up bot
+10/02/2022 13:50:50 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:50:53 | MESSAGE: Bot is connected to discord
+10/02/2022 13:52:14 | MESSAGE: Starting up bot
+10/02/2022 13:52:14 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:52:17 | MESSAGE: Bot is connected to discord
+10/02/2022 13:53:01 | MESSAGE: Starting up bot
+10/02/2022 13:53:01 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:53:05 | MESSAGE: Bot is connected to discord
+10/02/2022 13:55:26 | MESSAGE: Starting up bot
+10/02/2022 13:55:26 | MESSAGE: All Cogs Loaded - Logging into Discord
+10/02/2022 13:55:29 | MESSAGE: Bot is connected to discord

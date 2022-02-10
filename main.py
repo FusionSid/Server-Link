@@ -1,4 +1,5 @@
 import discord
+import datetime
 import os
 from discord.ext import commands, tasks
 import discord.ui
@@ -70,14 +71,38 @@ async def cross_server(message):
                 thread = int(value)
                 em = discord.Embed(description=message.content)
                 if message.author.avatar is not None:
-                    em.set_author(name=message.author.name, url=message.author.avatar.url)
+                    em.set_author(name=message.author.name, icon_url=message.author.avatar.url)
                 else:
-                    em.set_author(name=message.author.name, url=message.author.default_avatar)
+                    em.set_author(name=message.author.name, icon_url=message.author.default_avatar)
+
+                em.timestamp = datetime.datetime.now()
+                em.color = message.author.color
 
                 channel = await client.fetch_channel(channel)
                 thread = channel.get_thread(thread)
 
-                return await thread.send(embed=em)
+                if message.content == "":
+                    pass
+                else:
+                    await thread.send(embed=em)
+
+                if message.attachments is not None:
+                    for i in message.attachments:
+
+                        imgem = discord.Embed()
+                        if message.author.avatar is not None:
+                            imgem.set_author(name=message.author.name, icon_url=message.author.avatar.url)
+                        else:
+                            imgem.set_author(name=message.author.name, icon_url=message.author.default_avatar)
+
+                        imgem.timestamp = datetime.datetime.now()
+                        imgem.color = message.author.color
+                        imgem.set_image(url=i.url)
+
+                        await thread.send(embed=imgem)
+                
+
+                return 
     except Exception as e:
         pass
 
@@ -98,7 +123,7 @@ async def on_message(message):
 
 def start_bot(client):
     log.log_message("Starting up bot")
-    threads_keep_alive.start()
+    # threads_keep_alive.start()
     lst = [f for f in listdir("cogs/") if isfile(join("cogs/", f))]
     no_py = [s.replace('.py', '') for s in lst]
     startup_extensions = ["cogs." + no_py for no_py in no_py]
